@@ -25,7 +25,8 @@
   'app-navbar/loader',
   'app-footer/loader',
   'app-cards/loader',
-  'app-carousel/loader'
+  'app-carousel/loader',
+  'app-collections/loader',
 ], function (Bootstrap, ko, app, Logger) { 
   // this callback gets executed when all required modules are loaded
   Bootstrap.whenDocumentReady().then(function() {

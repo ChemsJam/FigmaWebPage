@@ -21,7 +21,8 @@ define([
   'ojs/ojresponsiveknockoututils', 
   'ojs/ojarraydataprovider',
   'ojs/ojdrawerpopup', 
-  'ojs/ojmodule-element', 'ojs/ojknockout'
+  'ojs/ojmodule-element', 
+  'ojs/ojknockout'
 ],
   function(
     ko, 
