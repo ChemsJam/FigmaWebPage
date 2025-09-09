@@ -4,4 +4,25 @@
   as shown at https://oss.oracle.com/licenses/upl/
 
 -->
-<p><oj-bind-text value="[[messageText]]"></oj-bind-text></p>
+<div class="store" style="display: flex; justify-content:center;">
+  <div class="cards-section">
+  <div id="sampleDemo" class="demo-padding demo-container">
+      <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+        <div id="component-container" class="oj-flex oj-sm-flex-items-initial">
+          <oj-bind-for-each data="[[employees]]">
+            <template>
+              <demo-card
+                class="oj-flex-item"
+                name="[[$current.data.name]]"
+                avatar="[[$current.data.avatar]]"
+                work-title="[[$current.data.title]]"
+                work-number="[[$current.data.work]]"
+                email="[[$current.data.email]]">
+              </demo-card>
+            </template>
+          </oj-bind-for-each>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

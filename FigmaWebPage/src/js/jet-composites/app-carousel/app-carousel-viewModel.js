@@ -15,15 +15,14 @@ define(
       var busyContext = Context.getContext(context.element).getBusyContext();
       var options = {"description": "Web Component Startup - Waiting for data"};
       self.busyResolve = busyContext.addBusyState(options);
-
+      /*
       self.composite = context.element;
       self.messageText = ko.observable('Hello from app-carousel');
       self.properties = context.properties;
       self.res = componentStrings['app-carousel'];
 
-      // Carousel logic variables
       self.carousel = null;
-
+*/
       self.disconnected = function() {
 
       };
@@ -32,9 +31,7 @@ define(
     ExampleComponentModel.prototype.connected = function() {
       var self = this;
 
-      // Espera a que el DOM del composite esté listo
       setTimeout(function() {
-        // Busca los elementos dentro del composite
         var root = self.composite;
         var track = root.querySelector('#carouselTrack');
         var prevBtn = root.querySelector('#prevBtn');
@@ -42,7 +39,6 @@ define(
 
         if (!track || !prevBtn || !nextBtn) return;
 
-        // Carousel logic adaptada a OJET
         function InfiniteCarousel() {
           this.track = track;
           this.prevBtn = prevBtn;
@@ -82,7 +78,6 @@ define(
           this.nextBtn.addEventListener('click', () => this.nextSlide());
           this.prevBtn.addEventListener('click', () => this.prevSlide());
 
-          // Touch/swipe support
           let startX = 0;
           let startY = 0;
           let threshold = 50;
@@ -156,10 +151,8 @@ define(
           this.updateCarousel();
         };
 
-        // Inicializa el carrusel y guarda la instancia para limpiar después
         self.carousel = new InfiniteCarousel();
 
-        // Marca el componente como listo
         if (self.busyResolve) self.busyResolve();
       }, 0);
     };
