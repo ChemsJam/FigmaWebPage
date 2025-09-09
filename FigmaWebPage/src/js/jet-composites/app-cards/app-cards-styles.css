@@ -1,0 +1,22 @@
+/* This file is where css selectors for the component go.
+   There will be hard coded properties and properties controlled by variables, for example
+
+   app-cards .app-cards-value-text {
+   color: var(--app-cards-value-text-color);
+   display: inline-block;
+	 }
+*/
+
+app-cards:not(.oj-complete){
+  visibility: hidden;
+}
+
+app-cards{
+	min-height: 50px;
+	width: 50px;
+}
+
+app-cards[hidden]
+{
+  display: none;
+}

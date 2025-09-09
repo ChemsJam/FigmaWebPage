@@ -1,0 +1,22 @@
+/* This file is where css selectors for the component go.
+   There will be hard coded properties and properties controlled by variables, for example
+
+   app-carousel .app-carousel-value-text {
+   color: var(--app-carousel-value-text-color);
+   display: inline-block;
+	 }
+*/
+
+app-carousel:not(.oj-complete){
+  visibility: hidden;
+}
+
+app-carousel{
+	min-height: 50px;
+	width: 50px;
+}
+
+app-carousel[hidden]
+{
+  display: none;
+}
