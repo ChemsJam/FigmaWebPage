@@ -2,16 +2,16 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-// Sirve el build de Oracle JET
-app.use(express.static('web'));
+// Servir archivos estáticos del build
+app.use(express.static(path.join(__dirname, 'web')));
 
 // Fallback SPA
-app.get('*', (_, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'web', 'index.html'));
 });
 
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Servidor corriendo en puerto ${PORT}`);
 });
