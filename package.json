@@ -16,5 +16,9 @@
   "engines": {
     "node": ">=16.0.0"
   },
+  "scripts": {
+    "build": "ojet build --release",
+    "start": "node server.js"
+  },
   "private": true
 }
